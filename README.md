@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/9f0900c9-432a-4596-a822-b762eb9fbb21)This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.
+This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.
 
 Changelog
 
