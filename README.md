@@ -53,5 +53,6 @@ add this line to last row of the User privilege specification, www ALL=NOPASSWD:
 It should be more than enough for those who wanna do a email hosting for multiple domains or clients. it works like a reseller function for the email hosting.
 
 6. Your very own administration panel is now online.
-![image](https://github.com/user-attachments/assets/de7baea7-57fb-4de1-b250-a78a8797136e)
+![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
+
 
