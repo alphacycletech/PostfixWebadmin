@@ -31,7 +31,7 @@
 2021-09-01 1.1 fixed button alignment to center. added check for update function.
 
 
-Instruction of installing this administration tool.
+<h3>Instruction of installing this administration tool.</h3>
 1. You can simply extract it to the root directory of a sub domain or a directory of a main domain
 ![image](https://github.com/user-attachments/assets/91a2ebe1-acfb-4165-a743-b95288a754f9)
 
