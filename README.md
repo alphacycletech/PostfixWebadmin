@@ -39,10 +39,10 @@ Instruction of installing this administration tool.
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
 
 3. You need to change the /www/vmail directory permission to allow www to access.
-<b>chmod 770 /www/vmail</b>
-chown vmail:www /www/vmail
-chmod 660 /www/vmail/postfixadmin.db
-chown vmail:www /www/vmail/postfixadmin.db
+<b>chmod 770 /www/vmail</b><br/>
+<b>chown vmail:www /www/vmail</b><br/>
+<b>chmod 660 /www/vmail/postfixadmin.db</b><br/>
+<b>chown vmail:www /www/vmail/postfixadmin.db</b><br/>
 
 4. Go to terminal, enter sudo visudo
 add this line to last row of the User privilege specification, www ALL=NOPASSWD: ALL
