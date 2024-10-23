@@ -45,14 +45,15 @@ Instruction of installing this administration tool.
 <b>chown vmail:www /www/vmail/postfixadmin.db</b><br/>
 
 4. Go to terminal, enter sudo visudo
-add this line to last row of the User privilege specification, www ALL=NOPASSWD: ALL
+add this line to last row of the User privilege specification,
+<b>www ALL=NOPASSWD: ALL</b><br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
-5. This administration tool is not compatible with php 8.x, you will need to switch it to php 7.4 or below
+6. This administration tool is not compatible with php 8.x, you will need to switch it to php 7.4 or below
 It should be more than enough for those who wanna do a email hosting for multiple domains or clients. it works like a reseller function for the email hosting.
 
-6. Your very own administration panel is now online.
+7. Your very own administration panel is now online.
 ![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
 
 
