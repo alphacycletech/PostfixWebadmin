@@ -35,22 +35,22 @@ Instruction of installing this administration tool.
 1. You can simply extract it to the root directory of a sub domain or a directory of a main domain
 ![image](https://github.com/user-attachments/assets/91a2ebe1-acfb-4165-a743-b95288a754f9)
 
-2. Change the info to suit yourself in config.php and config.ini. the database path should be pointing to the default mailserver location which is /www/vmail/postfixadmin.db, in case your database name or path is different, you may change it.
+2. Change the info to suit yourself in config.php and config.ini. the database path should be pointing to the default mailserver location which is <b>/www/vmail/postfixadmin.db</b>, in case your database name or path is different, you may change it.
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
 
-3. You need to change the /www/vmail directory permission to allow www to access.
+3. You need to change the /www/vmail directory permission to allow www to access.<br/>
 <b>chmod 770 /www/vmail</b><br/>
 <b>chown vmail:www /www/vmail</b><br/>
 <b>chmod 660 /www/vmail/postfixadmin.db</b><br/>
 <b>chown vmail:www /www/vmail/postfixadmin.db</b><br/>
 
 4. Go to terminal, enter sudo visudo
-add this line to last row of the User privilege specification,
+add this line to last row of the User privilege specification,<br/>
 <b>www ALL=NOPASSWD: ALL</b><br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
-6. This administration tool is not compatible with php 8.x, you will need to switch it to php 7.4 or below
+6. This administration tool is not compatible with <b style='color:red'>php 8.x</b>, you will need to switch it to <b style='color:red'php 7.4</b> or below
 It should be more than enough for those who wanna do a email hosting for multiple domains or clients. it works like a reseller function for the email hosting.
 
 7. Your very own administration panel is now online.
