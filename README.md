@@ -51,7 +51,7 @@
 
 4. Go to terminal, enter sudo visudo
 add this line to last row of the User privilege specification,<br/>
-<b>www ALL=NOPASSWD: ALL</b><br/>
+$\color{red}{www ALL=NOPASSWD: ALL}$<br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
 
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
