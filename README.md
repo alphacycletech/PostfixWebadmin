@@ -43,10 +43,10 @@
 
 
 3. You need to change the /www/vmail directory permission to allow www to access.<br/>
-<b>chmod 770 /www/vmail</b><br/>
-<b>chown vmail:www /www/vmail</b><br/>
-<b>chmod 660 /www/vmail/postfixadmin.db</b><br/>
-<b>chown vmail:www /www/vmail/postfixadmin.db</b><br/>
+$\color{red}{chmod\ 770\ /www/vmail}$<br/>
+$\color{red}{chown\ vmail:www\ /www/vmail}$<br/>
+$\color{red}{chmod\ 660\ /www/vmail/postfixadmin.db}$<br/>
+$\color{red}{chown\ vmail:www\ /www/vmail/postfixadmin.db}$<br/>
 
 
 4. Go to terminal, enter sudo visudo
