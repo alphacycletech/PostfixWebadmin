@@ -61,7 +61,7 @@ It should be more than enough for those who wanna do a email hosting for multipl
 
 
 6. Your very own administration panel is now online.
-7. 
+
 ![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
 
 
