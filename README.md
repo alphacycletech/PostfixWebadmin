@@ -37,7 +37,7 @@
 ![image](https://github.com/user-attachments/assets/31eb9593-e2c4-4b03-9315-2196f4471507)
 
 
-2. Change the info to suit yourself in config.php and config.ini. the database path should be pointing to the default mailserver location which is <span style="color: green">/www/vmail/postfixadmin.db</span>, in case your database name or path is different, you may change it.
+2. Change the info to suit yourself in config.php and config.ini. the database path should be pointing to the default mailserver location which is $\color{red}{/www/vmail/postfixadmin.db<}$, in case your database name or path is different, you may change it.
 
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
 
