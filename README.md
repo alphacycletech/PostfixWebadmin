@@ -41,22 +41,27 @@
 
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
 
-4. You need to change the /www/vmail directory permission to allow www to access.<br/>
+
+3. You need to change the /www/vmail directory permission to allow www to access.<br/>
 <b>chmod 770 /www/vmail</b><br/>
 <b>chown vmail:www /www/vmail</b><br/>
 <b>chmod 660 /www/vmail/postfixadmin.db</b><br/>
 <b>chown vmail:www /www/vmail/postfixadmin.db</b><br/>
 
-5. Go to terminal, enter sudo visudo
+
+4. Go to terminal, enter sudo visudo
 add this line to last row of the User privilege specification,<br/>
 <b>www ALL=NOPASSWD: ALL</b><br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
+
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
-6. This administration tool is not compatible with github $\color{red}{php 8.x}$, you will need to switch it to $\color{red}{php 7.4}$ or below
+5. This administration tool is not compatible with github $\color{red}{php 8.x}$, you will need to switch it to $\color{red}{php 7.4}$ or below
 It should be more than enough for those who wanna do a email hosting for multiple domains or clients. it works like a reseller function for the email hosting.
 
-7. Your very own administration panel is now online.
+
+6. Your very own administration panel is now online.
+7. 
 ![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
 
 
