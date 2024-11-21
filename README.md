@@ -1,6 +1,7 @@
 <h1>This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.</h1>
 
 <h2>Changelog</h2>
+2024-11-21 2.5 added email trace feature, untested. update security of bruteforce attack.
 
 2024-10-01 2.4 added autofocus in input field and centered login textbox
 
