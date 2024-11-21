@@ -3,13 +3,21 @@ from hmac import compare_digest as compare_hash
 import sqlite3
 import sys
 from datetime import datetime
-import uuid
+import base64
+import binascii
 
 email=sys.argv[1]
 password=sys.argv[2]
 hashed=crypt.crypt(password, crypt.METHOD_MD5)
-pass_random = uuid.uuid4().hex
-pass_encode = pass_random[0:24]
+
+data=password
+str2 = data.strip()
+if sys.version_info[0] == 2:
+ b64_data = base64.b64encode(str2)
+else:
+ b64_data = base64.b64encode(str2.encode('utf-8'))
+ 
+pass_encode=binascii.hexlify(b64_data).decode()
 name=sys.argv[3]
 is_admin=sys.argv[4]
 maildir=sys.argv[5]

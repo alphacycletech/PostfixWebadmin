@@ -1,6 +1,11 @@
 <?php
 echo "<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>";
 include('config.php');
+include('style.php');
+session_start();
+include('logincheck.php');
+echo "<style>td {white-space: nowrap;} .font-md {font-size:12px}</style>";
+echo "<body style='background:rgba(0,0,0,0)'>";
 
 if(!isset($_POST['username'])){
     
@@ -38,22 +43,29 @@ if($_POST['quota']==''){
 
 $quota_size=$quota*$quota_type;
 
-echo "<style>.input {height:40px;width:200px;border:1px solid lightgrey;font-size:16px;text-align:center} .input2 {height:40px;width:80px;border:1px solid lightgrey;font-size:16px;text-align:center} .submit {height:40px;background:grey;border:0px;width:100%;font-weight:bold;font-size:16px;color:white} .submit:hover {background:black} select {text-align-last:center}</style>";
-echo "<form method='post'><table align='center' style='margin-top:20vh'>";
-echo "<tr><th>Full Name</th><th>Username</th><th>Password</th><th>Admin</th><th colspan=2>Quota</th></tr>";
-echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='input'></td><td><input type='text' name='username' placeholder='Username' class='input'></td><td><input type='password' name='password' placeholder='Password' class='input'></td><td><select name='admin' class='input2'><option value=0>No</option><option value=1>Yes</option></select></td><td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='input'></td><td>MB</td></tr></table>";
-echo "<table align='center' width='200px'><tr><td><input type='submit' name='submit' value='ADD' class='submit'></td></tr>";
+echo "<div class='container'>";
+echo "<div class='form-group row'>";
+echo "<form method='post'>";
+echo "<table align='center' style='margin-top:20vh;text-align:center;width:100%' class='table font-md'>";
+echo "<thead>";
+echo "<tr><th class='col-lg-2'>Full Name</th><th class='col-lg-2'>Username</th><th class='col-lg-2'>Password</th><th>Admin</th><th class='col-lg-2'>Quota</th></tr>";
+echo "</thead>";
+echo "<tbody class='align-middle'>";
+echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='form-control font-md text-center' autofocus></td><td><input type='text' name='username' placeholder='Username' class='form-control font-md text-center'></td><td><input type='password' name='password' placeholder='Password' class='form-control font-md text-center'></td><td><select name='admin' class='form-control font-md text-center'><option value=0>No</option><option value=1>Yes</option></select></td><td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='form-control font-md text-center'></td><td>MB</td></tr></tbody></table>";
+echo "<table align='center' width='200px'><tr><td><input type='submit' name='submit' value='ADD' class='btn btn-secondary font-md' style='width:100%'></td></tr>";
 echo "</table></form>";
-echo "<p align='center' style='color:grey'>".$sub_title."</p>";
+echo "</div>";
+echo "</div>";
+echo "<p align='center' style='color:grey' class='font-md'>".$sub_title."</p>";
 
 if(!isset($_POST['submit'])){
     
 }elseif(isset($_POST['submit']) && ($_POST['username']=='' || $_POST['password']=='' || $_POST['name']=='' || $_POST['quota']=='')){
-    echo "<table style='background:pink' align='center'><tr height='50px'><td width='400px' align='center' style='border:1px solid red;color:red'>Please fill in all the fields!</td></tr></table>";
+    echo "<table style='background:pink' align='center' class='font-md'><tr height='40px'><td width='300px' align='center' style='border:1px solid red;color:red'>Please fill in all the fields!</td></tr></table>";
 }else{
     $output=shell_exec("python3 adduser.py '".$email."' '".$password."' '".$name."' '".$admin."' '".$maildir."' '".$quota_size."' '".$username."' '".$domain."' '".$database."'");
     echo $output;
-    echo "<table style='background:lightgreen' align='center'><tr height='50px'><td width='400px' align='center' style='border:1px solid green;color:green'>New user has been added successfully!</td></tr></table>";
+    echo "<table style='background:lightgreen' align='center' class='font-md'><tr height='40px'><td width='300px' align='center' style='border:1px solid green;color:green'>New user has been added successfully!</td></tr></table>";
    }
 
 ?>

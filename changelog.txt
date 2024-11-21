@@ -1,3 +1,11 @@
+2024-11-21 2.5 added email trace feature, untested. update security of bruteforce attack.
+
+2024-10-01 2.4 added autofocus in input field and centered login textbox
+
+2024-09-30 2.3 changed the entire UI with bootstrap framework, mobile view is not supported at this version.
+
+2024-09-28 2.2 fixed the password encode issue which cause the mailbox tab in mailserver prompts error
+
 2024-07-15 2.1 top left icon in home links to setting to customize icon, title, footer, background and so on. backup your config.php before the update.
 
 2021-10-11 2.0 updated rasterized icon.

@@ -1,4 +1,7 @@
 <?php
+include('style.php');
+session_start();
+include('logincheck.php');
 $config = parse_ini_file('config.ini', true);
 $newdomain=$_POST['newdomain'];
 $newtitle=$_POST['newtitle'];
@@ -85,22 +88,27 @@ if (!function_exists('write_ini_file')) {
     }
 }
 
-echo "<style>.input {border:1px solid lightgrey;border-collapse:collapse;text-align:center;white-space:nowrap;height:30px;width:300px} tr.input:nth-child(even) {background: lightgrey;} tr.input:nth-child(odd) {background: white;} .icon-btn {color:black;font-size:150%} .submit {height:40px;background:grey;border:0px;width:200px;font-weight:bold;font-size:16px;color:white} .submit:hover {background:black}</style>";
+echo "<style>td {white-space: nowrap;} .font-md {font-size:12px}</style>";
+echo "<body style='background:rgba(0,0,0,0)'>";
 echo "<form method='post'>";
-echo "<table align='center' style='margin-top:10vh;table-layout:fixed'>";
-echo "<tr><th>Domain*</th><td>&nbsp&nbsp<input type='textbox' name='newdomain' class='input' value='".$config['system']['domain']."'/></td></tr>";
-echo "<tr><th>Title*</th><td>&nbsp&nbsp<input type='textbox' name='newtitle' class='input' value='".$config['system']['title']."'/></td></tr>";
-echo "<tr><th>Footer*</th><td>&nbsp&nbsp<input type='textbox' name='newfooter' class='input' value='".$config['system']['footer']."'/></td></tr>";
-echo "<tr><th>Background</th><td>&nbsp&nbsp<input type='textbox' name='newbackground' class='input' value='".$config['system']['background']."'/></td></tr>";
-echo "<tr><th>Logo</th><td>&nbsp&nbsp<input type='textbox' name='newlogo' class='input' value='".$config['system']['logo']."'/></td></tr>";
-echo "<tr><th>Logo 2</th><td>&nbsp&nbsp<input type='textbox' name='newlogo2' class='input' value='".$config['system']['logo2']."'/></td></tr>";
-echo "<tr><th>Favicon</th><td>&nbsp&nbsp<input type='textbox' name='newfavicon' class='input' value='".$config['system']['favicon']."'/></td></tr>";
-echo "<tr><td style='text-align:right' colspan=2><button type='submit' class='submit' name='submit'>Update</button></td></tr>";
+echo "<div class='container'>";
+echo "<div class='form-group row'>";
+echo "<table align='center' style='margin-top:10vh;text-align:center;width:50%' class='font-md'>";
+echo "<tr><th class='col-lg-1'>Domain*</th><td class='col-lg-3'><input type='textbox' name='newdomain' class='form-control font-md' id='domain' value='".$config['system']['domain']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Title*</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newtitle' value='".$config['system']['title']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Footer*</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfooter' value='".$config['system']['footer']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Background</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newbackground' value='".$config['system']['background']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Logo</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo' value='".$config['system']['logo']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Logo 2</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo2' value='".$config['system']['logo2']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Favicon</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfavicon' value='".$config['system']['favicon']."'/></td></tr>";
+echo "<tr><td style='text-align:right' colspan=2><button type='submit' class='btn btn-secondary font-md' name='submit'>Update</button></td></tr>";
 echo "</table>";
 echo "</form>";
+echo "</div>";
+echo "</div>";
 
 if(isset($_POST['submit']) && $newdomain!='' && $newtitle!='' && $newfooter!=''){
-    echo "<table style='background:lightgreen' align='center'><tr height='50px'><td width='400px' align='center' style='border:1px solid green;color:green'>Setting has been updated successfully!</td></tr></table>";
+    echo "<table style='background:lightgreen' align='center' class='font-md'><tr height='40px'><td width='300px' align='center' style='border:1px solid green;color:green'>Setting has been updated successfully!</td></tr></table>";
     $config['system']['domain'] = $newdomain;
     $config['system']['title'] = $newtitle;
     $config['system']['footer'] = $newfooter;
@@ -111,6 +119,13 @@ if(isset($_POST['submit']) && $newdomain!='' && $newtitle!='' && $newfooter!='')
     write_ini_file('config.ini', $config);
     echo "<script>parent.document.location.href='logout.php'</script>";
 }elseif(isset($_POST['submit']) && ($newdomain=='' || $newtitle=='' || $newfooter=='')){
-    echo "<table style='background:pink' align='center'><tr height='50px'><td width='400px' align='center' style='border:1px solid red;color:red'>Please fill in all the fields!</td></tr></table>";
+    echo "<table style='background:pink' align='center' class='font-md'><tr height='40px'><td width='300px' align='center' style='border:1px solid red;color:red'>Please fill in all the fields!</td></tr></table>";
 }
 ?>
+<html>
+<script>
+window.onload = function() {
+  document.getElementById("domain").focus();
+}
+</script>
+</html>
