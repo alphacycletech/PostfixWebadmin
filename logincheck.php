@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION['login']) || $_SESSION['login']!=$_GET['token']){
+if(!isset($_SESSION['login'])){
     session_unset();
     header('Location:index.php');
 }

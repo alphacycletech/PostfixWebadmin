@@ -40,7 +40,7 @@ while($min_page<=$max_page){
     if($min_page==$page){
         echo "<b class='font-md'>".$min_page."</b>";
     }else{
-        echo "<a href='?page=".$min_page."&token=".$_GET['token']."' style='text-decoration:none'> ".$min_page." </a>";
+        echo "<a href='?page=".$min_page."' style='text-decoration:none'> ".$min_page." </a>";
     }
     $min_page++;
 }

@@ -9,7 +9,7 @@ echo "<title>".$title."</title>";
 echo "<link href='".$favicon."' rel='icon' type='image/x-icon' />";
 echo "<body style='background:url(".$background.");background-attachment:fixed;background-size:cover'>";
 
-$token=rand(0,9999999999);
+$token=md5(date('Y-m-d H:i:s'));
 
 if(!isset($_POST['username'])){
 
@@ -40,7 +40,7 @@ if(!isset($_POST['submit'])){
         $_SESSION['login']=$token;
         $_SESSION['name']=$result[1];
         $_SESSION['user']=$result[0];
-        header('Location:home.php?token='.$token);
+        header('Location:home.php');
     }
 echo "<table style='background:pink' align='center'><tr height='50px'><td width='400px' align='center' style='border:1px solid red;color:red'>You've entered the wrong username or password!</td></tr></table>";
       }
