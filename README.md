@@ -1,6 +1,8 @@
 <h1>This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.</h1>
 
 <h2>Changelog</h2>
+2024-12-04 2.7 fixed on login check function and updated support up to php 8.3.
+
 2024-12-02 2.6 increased date range of mail trace.
 
 2024-11-21 2.5 added email trace feature, untested. update security of bruteforce attack.
