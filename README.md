@@ -63,18 +63,18 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
-5. You will need to install some python dependencies
-   $\color{red}{Ubuntu 24.08 & Python3}$
-   $\color{red}{sudo apt install python3-pandas}$
+5. You will need to install some python dependencies<br/>
+   $\color{red}{Ubuntu 24.08 & Python3}$<br/>
+   $\color{red}{sudo apt install python3-pandas}$<br/>
 
-   $\color{red}{Below Ubuntu 24.08 & Python3}$
-   $\color{red}{sudo python3 -m pip install pandas}$
+   $\color{red}{Below Ubuntu 24.08 & Python3}$<br/>
+   $\color{red}{sudo python3 -m pip install pandas}$<br/>
 
-6. Configure your mail log date format to standard YYYY-mm-dd H:i:s
-$\color{red}{Goto rsyslog conf}$
-$\color{red}{sudo nano /etc/rsyslog.conf}$
-Under Global Directives, comment out the existing style such as $\color{red}{$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat}$
-$\color{red}{sudo systemctl restart rsyslog}$
+6. Configure your mail log date format to standard YYYY-mm-dd H:i:s<br/>
+$\color{red}{Goto rsyslog conf}$<br/>
+$\color{red}{sudo nano /etc/rsyslog.conf}$<br/>
+Under Global Directives, comment out the existing style such as $\color{red}{$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat}$<br/>
+$\color{red}{sudo systemctl restart rsyslog}$<br/>
 
 7. Your very own administration panel is now online.
 
