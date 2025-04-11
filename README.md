@@ -72,7 +72,7 @@ $\color{red}{sudo\ python3\ -m\ pip\ install\ pandas}$<br/>
 6. Configure your mail log date format to standard YYYY-mm-dd H:i:s<br/>
 $\color{red}{Goto\ rsyslog\ conf}$<br/>
 $\color{red}{sudo\ nano\ /etc/rsyslog.conf}$<br/>
-Under Global Directives, comment out the existing style such as $\color{red}{ActionFileDefaultTemplate\ RSYSLOG_TraditionalFileFormat}$<br/>
+Under Global Directives, comment out the existing style such as $\color{red}{'$ActionFileDefaultTemplate\ RSYSLOG_TraditionalFileFormat'}$<br/>
 $\color{red}{sudo\ systemctl\ restart\ rsyslog}$<br/>
 
 7. Your very own administration panel is now online.
