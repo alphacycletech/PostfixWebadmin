@@ -63,11 +63,20 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
-5. This administration tool is not compatible with github $\color{red}{php 8.x}$, you will need to switch it to $\color{red}{php 7.4}$ or below
-It should be more than enough for those who wanna do a email hosting for multiple domains or clients. it works like a reseller function for the email hosting.
+5. You will need to install some python dependencies
+   $\color{red}{Ubuntu 24.08 & Python3}$
+   $\color{red}{sudo apt install python3-pandas}$
 
+   $\color{red}{Below Ubuntu 24.08 & Python3}$
+   $\color{red}{sudo python3 -m pip install pandas}$
 
-6. Your very own administration panel is now online.
+6. Configure your mail log date format to standard YYYY-mm-dd H:i:s
+$\color{red}{Goto rsyslog conf}$
+$\color{red}{sudo nano /etc/rsyslog.conf}$
+Under Global Directives, comment out the existing style such as $\color{red}{$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat}$
+$\color{red}{sudo systemctl restart rsyslog}$
+
+7. Your very own administration panel is now online.
 
 ![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
 
