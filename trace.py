@@ -5,49 +5,23 @@ import glob
 conn = sqlite3.connect('maillog.db')
 
 conn.execute("DROP TABLE log")
-conn.execute("CREATE TABLE log (Date VARCHAR(20),Server VARCHAR(100),QueueId VARCHAR(100),EmailId VARCHAR(100),FromUser VARCHAR(100),ToUser VARCHAR(100),Status VARCHAR(50))")
+conn.execute("CREATE TABLE log (Date VARCHAR(50),Server VARCHAR(100),QueueId VARCHAR(100),EmailId VARCHAR(100),FromUser VARCHAR(100),ToUser VARCHAR(100),Status VARCHAR(50))")
 
 for file in glob.glob('/var/log/mail.log*'):
     if('gz' not in file):
         df = pd.read_csv(file, sep='delimiter', header=None, engine='python')
         log_array=df.values.tolist()
+        log_array2=[str(item).replace("'", "") for item in log_array]
 
-        def replaceMonth(Month):
-            if(Month=='Jan'):
-                newMonth='01'
-            elif(Month=='Feb'):
-                newMonth='02'
-            elif(Month=='Mar'):
-                newMonth='03'
-            elif(Month=='Apr'):
-                newMonth='04'
-            elif(Month=='May'):
-                newMonth='05'
-            elif(Month=='Jun'):
-                newMonth='06'
-            elif(Month=='Jul'):
-                newMonth='07'
-            elif(Month=='Aug'):
-                newMonth='08'
-            elif(Month=='Sep'):
-                newMonth='09'
-            elif(Month=='Oct'):
-                newMonth='10'
-            elif(Month=='Nov'):
-                newMonth='11'
-            elif(Month=='Dec'):
-                newMonth='12'
-    
-            return newMonth
-
-        for x in log_array:
-            myDate=replaceMonth(x[0][:3])+"-"+x[0][4:15]
-            myServer=x[0][16:25]
-            myQueueId='' if x[0].find('[')==-1 else x[0][(x[0].find('['))+1:(x[0].find(']'))]
-            myEmailId='' if x[0].find(']')==-1 else x[0][x[0].find(']')+3:x[0].find(']')+14]
-            myFrom='' if x[0].find('from=')==-1 else x[0][(x[0].find('from='))+6:(x[0].find('>,'))]
-            myTo='' if x[0].find('to=')==-1 else x[0][(x[0].find('to='))+4:(x[0].find('>,'))]
-            myStatus='' if x[0].find('status=')==-1 else x[0][(x[0].find('status='))+7:(x[0].find('('))-1]
+        for x in log_array2:
+            y=str(x)[1:-1]
+            myDate=str(y[0:31].replace('T',' '))[0:19]
+            myServer=y[33:42]
+            myQueueId='' if y.find('[')==-1 else y[(y.find('['))+1:(y.find(']'))]
+            myEmailId='' if y.find(']')==-1 else y[y.find(']')+3:y.find(']')+14]
+            myFrom='' if y.find('from=')==-1 else y[(y.find('from='))+6:(y.find('>,'))]
+            myTo='' if y.find('to=')==-1 else y[(y.find('to='))+4:(y.find('>,'))]
+            myStatus='' if y.find('status=')==-1 else y[(y.find('status='))+7:(y.find('('))-1]
             conn.execute("INSERT INTO log VALUES ('"+myDate+"','"+myServer+"','"+myQueueId+"','"+myEmailId+"','"+myFrom+"','"+myTo+"','"+myStatus+"')")
     #print(myEmailId)
     

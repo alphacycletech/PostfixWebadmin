@@ -36,7 +36,6 @@ echo "</button>";
 echo "<div class='collapse navbar-collapse' id='navbarNav'>";
 echo "<ul class='navbar-nav font-lg'>";
 echo "
-  <li class='nav-item'><a href='?module=modify' id='font-grey' class='nav-link' "; if($module=='modify'){echo "style='color:white'";} echo ">Change Password</a></li>
   <li class='nav-item'><a href='?module=list' id='font-grey' class='nav-link' "; if($module=='list'){echo "style='color:white'";} echo ">List Users</a></li>
   <li class='nav-item'><a href='?module=adduser' id='font-grey' class='nav-link' "; if($module=='adduser'){echo "style='color:white'";} echo ">Add Users</a></li>
   <li class='nav-item'><a href='?module=listforwarder' id='font-grey' class='nav-link' "; if($module=='listforwarder'){echo "style='color:white'";} echo ">List Forwarders</a></li>

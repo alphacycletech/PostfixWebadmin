@@ -8,7 +8,7 @@ page=int(sys.argv[3])
 row_per_page=(page-1)*10
 con = sqlite3.connect(database)
 cur = con.cursor()
-cur.execute("select * from mailbox where domain=? order by full_name limit ?,10",(domain,row_per_page,))
+cur.execute("select username,password,password_encode,full_name,is_admin,maildir,quota,local_part,domain,created,modified,active,current_usage,quota_active from mailbox where domain=? order by full_name limit ?,10",(domain,row_per_page,))
 for row in cur:
     print(str(row[0])+'|'+str(row[3])+'|'+str(row[4])+'|'+str(row[6])+'|'+str(row[7])+'|'+str(row[8])+'|'+str(row[9])+'|'+str(row[10])+'|'+str(row[11])+'|')
 con.close()
