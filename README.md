@@ -64,11 +64,10 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
 5. You will need to install some python dependencies<br/>
-   $\color{red}{Ubuntu 24.08 & Python3}$<br/>
-   $\color{red}{sudo apt install python3-pandas}$<br/>
-
-   $\color{red}{Below Ubuntu 24.08 & Python3}$<br/>
-   $\color{red}{sudo python3 -m pip install pandas}$<br/>
+$\color{red}{Ubuntu 24.08 & Python3}$<br/>
+$\color{red}{sudo apt install python3-pandas}$<br/>
+$\color{red}{Below Ubuntu 24.08 & Python3}$<br/>
+$\color{red}{sudo python3 -m pip install pandas}$<br/>
 
 6. Configure your mail log date format to standard YYYY-mm-dd H:i:s<br/>
 $\color{red}{Goto rsyslog conf}$<br/>
