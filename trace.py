@@ -18,7 +18,7 @@ for file in glob.glob('/var/log/mail.log*'):
             myDate=str(y[0:31].replace('T',' '))[0:19]
             myServer=y[33:42]
             myQueueId='' if y.find('[')==-1 else y[(y.find('['))+1:(y.find(']'))]
-            myEmailId='' if y.find(']')==-1 else y[y.find(']')+3:y.find(']')+14]
+            myEmailId='' if y.find(']')==-1 else y[y.find(']')+3:y.find(']')+13]
             myFrom='' if y.find('from=')==-1 else y[(y.find('from='))+6:(y.find('>,'))]
             myTo='' if y.find('to=')==-1 else y[(y.find('to='))+4:(y.find('>,'))]
             myStatus='' if y.find('status=')==-1 else y[(y.find('status='))+7:(y.find('('))-1]

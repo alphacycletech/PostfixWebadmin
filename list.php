@@ -35,15 +35,15 @@ echo "</div>";
 echo "</div>";
 $min_page=1;
 $max_page=ceil(str_replace(')','',str_replace(',','',str_replace('(','',end($result))))/10);
-echo "<p align='center' class='font-md'>Page ";
+echo "<p align='center' class='font-md'><a href='?page=1' title='First Page' style='text-decoration:none;padding:5px;"; if($page==1){echo "font-weight:bold;color:silver;pointer-events:none";} echo "'><<</a><a href='?page=".($page-1)."' title='Previous Page' style='text-decoration:none;padding:5px;"; if($page==1){echo "font-weight:bold;color:silver;pointer-events:none";} echo "'><</a>";
 while($min_page<=$max_page){
     if($min_page==$page){
-        echo "<b class='font-md'>".$min_page."</b>";
+        echo "<b class='font-md' style='padding:5px'>".$min_page."</b>";
     }else{
-        echo "<a href='?page=".$min_page."' style='text-decoration:none'> ".$min_page." </a>";
+        echo "<a href='?page=".$min_page."' title='".$min_page."' style='text-decoration:none;padding:5px;"; if(($page==1 || $page==2 || $page==3) && $min_page>5){echo "display:none";}elseif(($page==$max_page || $page==$max_page-1 || $page==$max_page-2) && $min_page<$max_page-4){echo "display:none";}elseif($page>=4 && $min_page-$page>2){echo "display:none";}elseif($max_page-$page>=3 && $page-$min_page>2){echo "display:none";} echo "'> ".$min_page." </a>";
     }
     $min_page++;
 }
-echo "</p>";
+echo "<a href='?page=".($page+1)."' title='Next Page' style='text-decoration:none;padding:5px;"; if($page==$max_page || $max_page==0){echo "font-weight:bold;color:silver;pointer-events:none";} echo "'>></a><a href='?page=".$max_page."' title='Last Page' style='text-decoration:none;padding:5px;"; if($page==$max_page || $max_page==0){echo "font-weight:bold;color:silver;pointer-events:none";} echo "'>>></a></p>";
 echo "<p align='center' style='color:grey' class='font-md'>".$sub_title."</p>";
 ?>
