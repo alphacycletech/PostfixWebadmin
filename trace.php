@@ -15,7 +15,7 @@ if(!isset($_GET['page'])){
     $page=$_GET['page'];
 }
 
-$listcontent = $db->query("SELECT A.Date,A.Server,A.QueueId,A.EmailId,A.FromUser,B.ToUser,B.Status FROM (SELECT * FROM log WHERE Status='' ORDER BY Date DESC) A INNER JOIN (SELECT * FROM log WHERE Status<>'' ORDER BY Date DESC) B ON A.EmailId=B.EmailId WHERE A.FromUser NOT IN ('root@localhost.localdomain','') AND (A.FromUser LIKE '%".$domain."' OR B.ToUser LIKE '%".$domain."') LIMIT 10 OFFSET ".(($page-1)*10));
+$listcontent = $db->query("SELECT A.Date,A.Server,A.QueueId,A.EmailId,A.FromUser,B.ToUser,B.Status FROM (SELECT * FROM log WHERE Status='' ORDER BY Date DESC) A INNER JOIN (SELECT * FROM log WHERE Status<>'' ORDER BY Date DESC) B ON A.EmailId=B.EmailId WHERE A.FromUser NOT IN ('root@localhost.localdomain','') AND (A.FromUser LIKE '%".$domain."' OR B.ToUser LIKE '%".$domain."') ORDER BY A.Date DESC LIMIT 10 OFFSET ".(($page-1)*10));
 $countcontent = $db->query("SELECT COUNT(*) AS 'Count' FROM (SELECT * FROM log WHERE Status='' ORDER BY Date DESC) A INNER JOIN (SELECT * FROM log WHERE Status<>'' ORDER BY Date DESC) B ON A.EmailId=B.EmailId WHERE A.FromUser NOT IN ('root@localhost.localdomain','') AND (A.FromUser LIKE '%".$domain."' OR B.ToUser LIKE '%".$domain."')");
 
 while ($row = $countcontent->fetchArray()) {
