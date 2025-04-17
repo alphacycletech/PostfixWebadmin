@@ -21,7 +21,7 @@
 2021-09-01 1.3 list user & forwarder order by name & forwarder address.<br/><br/>
 2021-09-01 1.2 cannot skip update and straight to the latest version. added changelog.<br/><br/>
 2021-09-01 1.1 fixed button alignment to center. added check for update function.<br/><br/>
-<br/><br/><br/>
+<br/><br/>
 <h3>Instruction of installing this administration tool.</h3>
 1. You can simply extract it to the root directory of a sub domain or a directory of a main domain.
 
