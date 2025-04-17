@@ -24,13 +24,13 @@
 <br/><br/><br/>
 <h3>Instruction of installing this administration tool.</h3>
 1. You can simply extract it to the root directory of a sub domain or a directory of a main domain.
-<br/><br/>
+
 ![image](https://github.com/user-attachments/assets/31eb9593-e2c4-4b03-9315-2196f4471507)
 <br/><br/>
 2. Change the info to suit yourself in $\color{red}{config.php}$ and $\color{red}{config.ini}$. the database path should be pointing to the default mailserver location which is $\color{red}{/www/vmail/postfixadmin.db}$, in case your database name or path is different, you may change it.
-<br/><br/>
+
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
-<br/><br/>
+
 3. You need to change the /www/vmail directory permission to allow www to access.<br/>
 $\color{red}{chmod\ 770\ /www/vmail}$<br/>
 $\color{red}{chown\ vmail:www\ /www/vmail}$<br/>
