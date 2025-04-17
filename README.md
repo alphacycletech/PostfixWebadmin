@@ -1,7 +1,7 @@
 <h1>This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.</h1>
 
 <h2>Changelog</h2>
-2025-04-16 3.0 fixed and optimized page length issue.<br/>
+2025-04-16 3.0 fixed and optimized page length issue.<br/><br/>
 
 2025-04-16 2.9 trace log changed to descending in ordering.
 
