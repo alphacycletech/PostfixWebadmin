@@ -2,46 +2,26 @@
 
 <h2>Changelog</h2>
 2025-04-16 3.0 fixed and optimized page length issue.<br/><br/>
-
-2025-04-16 2.9 trace log changed to descending in ordering.
-
-2025-04-11 2.8 fixed some bugs, datetime format in trace and removed change password function.
-
-2024-12-04 2.7 fixed on login check function and updated support up to php 8.3.
-
-2024-12-02 2.6 increased date range of mail trace.
-
-2024-11-21 2.5 added email trace feature, untested. update security of bruteforce attack.
-
-2024-10-01 2.4 added autofocus in input field and centered login textbox
-
-2024-09-30 2.3 changed the entire UI with bootstrap framework, mobile view is not supported at this version.
-
-2024-09-28 2.2 fixed the password encode issue which cause the mailbox tab in mailserver prompts error
-
-2024-07-15 2.1 top left icon in home links to setting to customize icon, title, footer, background and so on. backup your config.php before the update.
-
-2021-10-11 2.0 updated rasterized icon.
-
-2021-09-13 1.9 updated changelog preview layout.
-
-2021-09-11 1.8 added changelog preview.
-
-2021-09-11 1.7 changed the update url.
-
-2021-09-10 1.6 added pagination & resized the edit & delete icon.
-
-2021-09-08 1.5 added mobile responsive support.
-
-2021-09-08 1.4 converted database access from php to python to increase security.
-
-2021-09-01 1.3 list user & forwarder order by name & forwarder address.
-
-2021-09-01 1.2 cannot skip update and straight to the latest version. added changelog.
-
-2021-09-01 1.1 fixed button alignment to center. added check for update function.
-
-
+2025-04-16 2.9 trace log changed to descending in ordering.<br/><br/>
+2025-04-11 2.8 fixed some bugs, datetime format in trace and removed change password function.<br/><br/>
+2024-12-04 2.7 fixed on login check function and updated support up to php 8.3.<br/><br/>
+2024-12-02 2.6 increased date range of mail trace.<br/><br/>
+2024-11-21 2.5 added email trace feature, untested. update security of bruteforce attack.<br/><br/>
+2024-10-01 2.4 added autofocus in input field and centered login textbox<br/><br/>
+2024-09-30 2.3 changed the entire UI with bootstrap framework, mobile view is not supported at this version.<br/><br/>
+2024-09-28 2.2 fixed the password encode issue which cause the mailbox tab in mailserver prompts error<br/><br/>
+2024-07-15 2.1 top left icon in home links to setting to customize icon, title, footer, background and so on. backup your config.php before the update.<br/><br/>
+2021-10-11 2.0 updated rasterized icon.<br/><br/>
+2021-09-13 1.9 updated changelog preview layout.<br/><br/>
+2021-09-11 1.8 added changelog preview.<br/><br/>
+2021-09-11 1.7 changed the update url.<br/><br/>
+2021-09-10 1.6 added pagination & resized the edit & delete icon.<br/><br/>
+2021-09-08 1.5 added mobile responsive support.<br/><br/>
+2021-09-08 1.4 converted database access from php to python to increase security.<br/><br/>
+2021-09-01 1.3 list user & forwarder order by name & forwarder address.<br/><br/>
+2021-09-01 1.2 cannot skip update and straight to the latest version. added changelog.<br/><br/>
+2021-09-01 1.1 fixed button alignment to center. added check for update function.<br/><br/>
+<br/><br/><br/>
 <h3>Instruction of installing this administration tool.</h3>
 1. You can simply extract it to the root directory of a sub domain or a directory of a main domain.
 
