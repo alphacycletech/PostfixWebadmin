@@ -23,10 +23,14 @@ echo "<div class='container'>";
 echo "<div class='form-group row'>";
 echo "<form method='post'><table style='margin-top:10vh;margin-left:25%;width:50%' class='table font-md text-center'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-1'>Current Version</th><th class='col-lg-1'>Latest Version</th><th class='col-lg-1'>Update Availablity</th></tr>";
+echo "<tr><th class='col-lg-1'>Current Version</th>
+<th class='col-lg-1'>Latest Version</th>
+<th class='col-lg-1'>Update Availablity</th></tr>";
 echo "</thead>";
 echo "<tbody class='align-top'>";
-echo "<tr><td><p class='form-control font-md'>".number_format($cur_version*1.0,1,'.','')."</p></td><td><p class='form-control font-md'>".number_format($latest_version,1,'.','')."</p></td><td>"; if($cur_version!=$latest_version){echo "<input type='submit' name='update' value='Update' class='btn btn-secondary font-md' style='width:100%'>";}else{echo "<input type='submit' name='update' value='Up-to-date' class='btn btn-secondary font-md' disabled style='width:100%'>";} echo "</td></tr>";
+echo "<tr><td><p class='form-control font-md'>".number_format($cur_version*1.0,1,'.','')."</p></td>
+<td><p class='form-control font-md'>".number_format($latest_version,1,'.','')."</p></td>
+<td>"; if($cur_version!=$latest_version){echo "<input type='submit' name='update' value='Update' class='btn btn-secondary font-md' style='width:100%'>";}else{echo "<input type='submit' name='update' value='Up-to-date' class='btn btn-secondary font-md' disabled style='width:100%'>";} echo "</td></tr>";
 echo "</tbody>";
 echo "</table></form>";
 echo "</div>";
@@ -43,7 +47,7 @@ shell_exec('rm -rf temp');
 shell_exec('rm -f update.txt');
 shell_exec('rm -f changelog.txt');
 file_put_contents('version.txt',$latest_version);
-header('Location:update.php');
+echo "<script>window.location.href='update.php';</script>";
 }
 
 /*$content = file_get_contents('changelog.txt');

@@ -5,9 +5,12 @@ include('style.php');
 session_start();
 include('logincheck.php');
 
-$forwarder=$_GET['cur_email'];
-$cur_recipient=$_GET['cur_recipient'];
-$cur_active=$_GET['cur_active'];
+$output=shell_exec("python3 getforwarderinfo.py '".$domain."' '".$database."' '".$cur_username."'");
+$result=explode('|',$output);
+
+$forwarder=$result[0];
+$cur_recipient=$result[1];
+$cur_active=$result[3];
 
 if(!isset($_POST['recipient'])){
     
@@ -28,10 +31,14 @@ echo "<div class='form-group row'>";
 echo "<form method='post'>";
 echo "<table align='center' style='margin-top:20vh;text-align:center;width:100%' class='table font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-2'>Forwarder</th><th class='col-lg-2'>Recipient</th><th class='col-lg-1'>Active</th></tr>";
+echo "<tr><th class='col-lg-2'>Forwarder</th>
+<th class='col-lg-2'>Recipient</th>
+<th class='col-lg-1'>Active</th></tr>";
 echo "</thead>";
 echo "<tbody>";
-echo "<tr><td><input type='text' class='form-control font-md text-center' value=".$forwarder." disabled></td><td><input type='text' name='recipient' placeholder='Receipient Email' class='form-control font-md text-center' id='recipient' value="; if(isset($recipient)){echo $recipient;}else{echo $cur_recipient;} echo "></td><td><select name='active' class='form-control font-md text-center'><option value=1 "; if(isset($active) && $active==1){echo 'selected';}elseif(!isset($active) && $cur_active==1){echo 'selected';} echo ">Yes</option><option value=0 "; if(isset($active) && $active==0){echo 'selected';}elseif(!isset($active) && $cur_active==0){echo 'selected';}  echo ">No</option></select></td></tr></tbody></table>";
+echo "<tr><td><input type='text' class='form-control font-md text-center' value=".$forwarder." disabled></td>
+<td><input type='text' name='recipient' placeholder='Receipient Email' class='form-control font-md text-center' id='recipient' value="; if(isset($recipient)){echo $recipient;}else{echo $cur_recipient;} echo "></td>
+<td><select name='active' class='form-control font-md text-center'><option value=1 "; if(isset($active) && $active==1){echo 'selected';}elseif(!isset($active) && $cur_active==1){echo 'selected';} echo ">Yes</option><option value=0 "; if(isset($active) && $active==0){echo 'selected';}elseif(!isset($active) && $cur_active==0){echo 'selected';}  echo ">No</option></select></td></tr></tbody></table>";
 echo "<table class='text-center'><tr><td class='col-lg-1'><input type='submit' name='submit' value='UPDATE' class='btn btn-secondary font-md' style='width:12.5%'>&nbsp<input type='submit' name='back' value='BACK' class='btn btn-secondary font-md' style='width:12.5%'></td></tr>";
 echo "</table></form>";
 echo "</div>";

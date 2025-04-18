@@ -12,7 +12,15 @@ echo "<div class='container'>";
 echo "<div class='form-group row'>";
 echo "<table align='center' style='margin-top:10vh;text-align:center;width:100%' class='table table-striped font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-1'>Username</th><th class='col-lg-2'>Full Name</th><th class='col-lg-1'>Admin</th><th class='col-lg-1'>Usage / Quota</th><th class='col-lg-2'>Domain</th><th class='col-lg-1'>Created Date</th><th class='col-lg-1'>Modified Date</th><th class='col-lg-1'>Active</th><th class='col-lg-1'></th></tr>";
+echo "<tr><th class='col-lg-1'>Username</th>
+<th class='col-lg-2'>Full Name</th>
+<th class='col-lg-1'>Admin</th>
+<th class='col-lg-1'>Usage / Quota</th>
+<th class='col-lg-2'>Domain</th>
+<th class='col-lg-1'>Created Date</th>
+<th class='col-lg-1'>Modified Date</th>
+<th class='col-lg-1'>Active</th>
+<th class='col-lg-1'></th></tr>";
 echo "</thead>";
 
 if(!isset($_GET['page'])){
@@ -27,7 +35,17 @@ $result_array=array_chunk($result, 9);
 $i=count($result_array);
 echo "<tbody>";
 for($x=0;$x<$i-1;$x++){
-    echo "<tr><td>".$result_array[$x][4]."</td><td>".$result_array[$x][1]."</td><td>";if($result_array[$x][2]==1){echo 'Yes';}else{echo 'No';} echo "</td><td>";$quota_check=shell_exec('sudo du -sh /www/vmail/'.$result_array[$x][5].'/'.$result_array[$x][4]); if(strpos($quota_check,'K')!=0){echo substr($quota_check,0,(strpos($quota_check,'K')))." KB";}elseif(strpos($quota_check,'M')!=0){echo substr($quota_check,0,(strpos($quota_check,'M')))." MB";}elseif(strpos($quota_check,'G')!=0){echo substr($quota_check,0,(strpos($quota_check,'G')))." GB";}else{echo '0 KB';} echo " / ".($result_array[$x][3]/1024/1024)." MB</td><td>".$result_array[$x][5]."</td><td>".$result_array[$x][6]."</td><td>".$result_array[$x][7]."</td><td>"; if($result_array[$x][8]==1){echo 'Yes';}else{echo 'No';} echo "</td><td><a href='maintenance.php?domain=".$result_array[$x][5]."&cur_username=".urlencode($result_array[$x][4])."&cur_quota=".$result_array[$x][3]."&cur_admin=".$result_array[$x][2]."&cur_active=".$result_array[$x][8]."&cur_name=".urlencode($result_array[$x][1])."' class='btn btn-primary' style='padding:2px'><i class='fa fa-edit'></i></a>&nbsp<a href='delete.php?domain=".$result_array[$x][5]."&cur_username=".$result_array[$x][4]."' class='btn btn-danger' style='padding:2px'><i class='fa fa-trash'></i></a></td></tr>";}
+    echo "<tr><td>".$result_array[$x][4]."</td>
+    <td>".$result_array[$x][1]."</td>
+    <td>";if($result_array[$x][2]==1){echo 'Yes';}else{echo 'No';} echo "</td>
+    <td>";$quota_check=shell_exec("sudo find /www/vmail/".$result_array[$x][5]."/".$result_array[$x][4]." -type f ! -name '*.log' ! -name '*.tmp' -exec ls -l {} + | awk '{sum += \$5} END {print sum}'");
+    $dir_check=shell_exec("sudo find /www/vmail/".$result_array[$x][5]." -name ".$result_array[$x][4]." -type d");
+    if($dir_check==''){echo "0 MB";}else{echo floor($quota_check/1024/1024)." MB";} echo " / ".($result_array[$x][3]/1024/1024)." MB</td>
+    <td>".$result_array[$x][5]."</td>
+    <td>".$result_array[$x][6]."</td>
+    <td>".$result_array[$x][7]."</td>
+    <td>"; if($result_array[$x][8]==1){echo 'Yes';}else{echo 'No';} echo "</td>
+    <td><a href='maintenance.php?domain=".$result_array[$x][5]."&cur_username=".urlencode($result_array[$x][4])."' class='btn btn-primary' style='padding:2px'><i class='fa fa-edit'></i></a>&nbsp<a href='delete.php?domain=".$result_array[$x][5]."&cur_username=".$result_array[$x][4]."' class='btn btn-danger' style='padding:2px'><i class='fa fa-trash'></i></a></td></tr>";}
 
 echo "</tbody>";
 echo "</table>";

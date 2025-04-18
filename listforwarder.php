@@ -12,7 +12,13 @@ echo "<div class='container'>";
 echo "<div class='form-group row'>";
 echo "<table align='center' style='margin-top:10vh;text-align:center;width:100%' class='table table-striped font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-2'>Forwarder</th><th class='col-lg-2'>Recipient</th><th class='col-lg-2'>Domain</th><th class='col-lg-1'>Created Date</th><th class='col-lg-1'>Modified Date</th><th class='col-lg-1'>Active</th><th class='col-lg-1'></th></tr>";
+echo "<tr><th class='col-lg-2'>Forwarder</th>
+<th class='col-lg-2'>Recipient</th>
+<th class='col-lg-2'>Domain</th>
+<th class='col-lg-1'>Created Date</th>
+<th class='col-lg-1'>Modified Date</th>
+<th class='col-lg-1'>Active</th>
+<th class='col-lg-1'></th></tr>";
 echo "</thead>";
        
 if(!isset($_GET['page'])){
@@ -27,7 +33,13 @@ $result_array=array_chunk($result, 6);
 $i=count($result_array);
 echo "<tbody>";
 for($x=0;$x<$i-1;$x++){
-    echo "<tr><td>".$result_array[$x][0]."</td><td class='input'>".$result_array[$x][1]."</td><td>".$result_array[$x][2]."</td><td>".$result_array[$x][3]."</td><td>".$result_array[$x][4]."</td><td>"; if($result_array[$x][5]==1){echo 'Yes';}else{echo 'No';} echo "</td><td><a href='maintenanceforwarder.php?domain=".$result_array[$x][2]."&cur_email=".$result_array[$x][0]."&cur_recipient=".$result_array[$x][1]."&cur_active=".$result_array[$x][5]."' class='btn btn-primary' style='padding:2px'><i class='fa fa-edit'></i></a>&nbsp<a href='deleteforwarder.php?domain=".$result_array[$x][2]."&cur_email=".$result_array[$x][0]."' class='btn btn-danger' style='padding:2px'><i class='fa fa-trash'></i></a></td></tr>";
+    echo "<tr><td>".$result_array[$x][0]."</td>
+    <td class='input'>".$result_array[$x][1]."</td>
+    <td>".$result_array[$x][2]."</td>
+    <td>".$result_array[$x][3]."</td>
+    <td>".$result_array[$x][4]."</td>
+    <td>"; if($result_array[$x][5]==1){echo 'Yes';}else{echo 'No';} echo "</td>
+    <td><a href='maintenanceforwarder.php?domain=".$result_array[$x][2]."' class='btn btn-primary' style='padding:2px'><i class='fa fa-edit'></i></a>&nbsp<a href='deleteforwarder.php?domain=".$result_array[$x][2]."&cur_email=".$result_array[$x][0]."' class='btn btn-danger' style='padding:2px'><i class='fa fa-trash'></i></a></td></tr>";
 }
 
 echo "</tbody>";

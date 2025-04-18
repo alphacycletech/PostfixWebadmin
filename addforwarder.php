@@ -30,8 +30,12 @@ echo "<div class='form-group row'>";
 echo "<form method='post'>";
 echo "<table align='center' style='margin-top:20vh;text-align:center;width:100%' class='table font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-2'>Forwarder</th><th class='col-lg-2'>Recipient</th><th class='col-lg-2'>Domain</th><th class='col-lg-1'>Active</th></tr>";
-echo "<tr><td ><input type='text' name='forwarder' placeholder='Forwarder Email' class='form-control font-md text-center' autofocus></td><td><input type='text' name='recipient' placeholder='Recipient Email' class='form-control font-md text-center'></td><td><input type='text' value='".$domain."' disabled class='form-control font-md text-center'></td><td><select name='active' class='form-control font-md text-center'><option value=1>Yes</option><option value=0>No</option></select></td></tbody></tr></table>";
+echo "<tr><th class='col-lg-2'>Forwarder</th><th class='col-lg-2'>Recipient</th>
+<th class='col-lg-2'>Domain</th><th class='col-lg-1'>Active</th></tr>";
+echo "<tr><td ><input type='text' name='forwarder' placeholder='Forwarder Email' class='form-control font-md text-center' autofocus></td>
+<td><input type='text' name='recipient' placeholder='Recipient Email' class='form-control font-md text-center'></td>
+<td><input type='text' value='".$domain."' disabled class='form-control font-md text-center'></td>
+<td><select name='active' class='form-control font-md text-center'><option value=1>Yes</option><option value=0>No</option></select></td></tbody></tr></table>";
 echo "<table align='center' width='200px'><tr><td><input type='submit' name='submit' value='ADD' class='btn btn-secondary font-md' style='width:100%'></td></tr>";
 echo "</table></form>";
 echo "</div>";

@@ -94,13 +94,20 @@ echo "<form method='post'>";
 echo "<div class='container'>";
 echo "<div class='form-group row'>";
 echo "<table align='center' style='margin-top:10vh;text-align:center;width:50%' class='font-md'>";
-echo "<tr><th class='col-lg-1'>Domain*</th><td class='col-lg-3'><input type='textbox' name='newdomain' class='form-control font-md' id='domain' value='".$config['system']['domain']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Title*</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newtitle' value='".$config['system']['title']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Footer*</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfooter' value='".$config['system']['footer']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Background</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newbackground' value='".$config['system']['background']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Logo</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo' value='".$config['system']['logo']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Logo 2</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo2' value='".$config['system']['logo2']."'/></td></tr>";
-echo "<tr><th class='col-lg-1'>Favicon</th><td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfavicon' value='".$config['system']['favicon']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Domain*</th>
+<td class='col-lg-3'><input type='textbox' name='newdomain' class='form-control font-md' id='domain' value='".$config['system']['domain']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Title*</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newtitle' value='".$config['system']['title']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Footer*</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfooter' value='".$config['system']['footer']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Background</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newbackground' value='".$config['system']['background']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Logo</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo' value='".$config['system']['logo']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Logo 2</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newlogo2' value='".$config['system']['logo2']."'/></td></tr>";
+echo "<tr><th class='col-lg-1'>Favicon</th>
+<td class='col-lg-3'><input type='textbox' class='form-control font-md' name='newfavicon' value='".$config['system']['favicon']."'/></td></tr>";
 echo "<tr><td style='text-align:right' colspan=2><button type='submit' class='btn btn-secondary font-md' name='submit'>Update</button></td></tr>";
 echo "</table>";
 echo "</form>";

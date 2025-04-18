@@ -48,10 +48,16 @@ echo "<div class='form-group row'>";
 echo "<form method='post'>";
 echo "<table align='center' style='margin-top:20vh;text-align:center;width:100%' class='table font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-2'>Full Name</th><th class='col-lg-2'>Username</th><th class='col-lg-2'>Password</th><th>Admin</th><th class='col-lg-2'>Quota</th></tr>";
+echo "<tr><th class='col-lg-2'>Full Name</th>
+<th class='col-lg-2'>Username</th><th class='col-lg-2'>Password</th>
+<th>Admin</th><th class='col-lg-2'>Quota</th></tr>";
 echo "</thead>";
 echo "<tbody class='align-middle'>";
-echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='form-control font-md text-center' autofocus></td><td><input type='text' name='username' placeholder='Username' class='form-control font-md text-center'></td><td><input type='password' name='password' placeholder='Password' class='form-control font-md text-center'></td><td><select name='admin' class='form-control font-md text-center'><option value=0>No</option><option value=1>Yes</option></select></td><td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='form-control font-md text-center'></td><td>MB</td></tr></tbody></table>";
+echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='form-control font-md text-center' autofocus></td>
+<td><input type='text' name='username' placeholder='Username' class='form-control font-md text-center'></td>
+<td><input type='password' name='password' placeholder='Password' class='form-control font-md text-center'></td>
+<td><select name='admin' class='form-control font-md text-center'><option value=0>No</option><option value=1>Yes</option></select></td>
+<td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='form-control font-md text-center'></td><td>MB</td></tr></tbody></table>";
 echo "<table align='center' width='200px'><tr><td><input type='submit' name='submit' value='ADD' class='btn btn-secondary font-md' style='width:100%'></td></tr>";
 echo "</table></form>";
 echo "</div>";

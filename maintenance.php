@@ -6,12 +6,16 @@ session_start();
 include('logincheck.php');
 
 $cur_username=urldecode($_GET['cur_username']);
-$cur_name=urldecode($_GET['cur_name']);
-$cur_admin=$_GET['cur_admin'];
-$cur_active=$_GET['cur_active'];
+
+$output=shell_exec("python3 getuserinfo.py '".$domain."' '".$database."' '".$cur_username."'");
+$result=explode('|',$output);
+
+$cur_name=$result[0];
+$cur_admin=$result[1];
+$cur_active=$result[3];
 $email=$cur_username.'@'.$domain;
 $quota_type=1024*1024;
-$cur_quota=$_GET['cur_quota']/$quota_type;
+$cur_quota=$result[2]/$quota_type;
 
 if(!isset($_POST['name'])){
     
@@ -55,10 +59,21 @@ echo "<div class='form-group row'>";
 echo "<form method='post'>";
 echo "<table align='center' style='margin-top:20vh;text-align:center;width:100%' class='table font-md'>";
 echo "<thead>";
-echo "<tr><th class='col-lg-2'>Full Name</th><th class='col-lg-2'>Username</th><th class='col-lg-2'>Password</th><th class='col-lg-1'>Admin</th><th  class='col-lg-1' colspan=2>Quota</th><th class='col-lg-1'>Active</th></tr>";
+echo "<tr><th class='col-lg-2'>Full Name</th>
+<th class='col-lg-2'>Username</th>
+<th class='col-lg-2'>Password</th>
+<th class='col-lg-1'>Admin</th>
+<th  class='col-lg-1' colspan=2>Quota</th>
+<th class='col-lg-1'>Active</th></tr>";
 echo "</thead>";
 echo "<tbody class='align-middle'>";
-echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='form-control font-md text-center' id='name' value='"; if(isset($name)){echo $name;}else{echo $cur_name;} echo "'></td><td><input type='text' name='username' placeholder='Username' disabled class='form-control font-md text-center' value='".$cur_username."'></td><td><input type='password' name='password' placeholder='Leave Blank To Remain' class='form-control font-md text-center'></td><td><select name='admin' class='form-control font-md text-center'><option value=0 "; if(isset($admin) && $admin==0){echo 'selected';}elseif(!isset($admin) && $cur_admin==0){echo 'selected';} echo ">No</option><option value=1 "; if(isset($admin) && $admin==1){echo 'selected';}elseif(!isset($admin) && $cur_admin==1){echo 'selected';}  echo ">Yes</option></select></td><td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='form-control font-md text-center' value="; if($quota==0){echo $cur_quota;}else{echo $quota;} echo "></td><td>MB</td><td><select name='active' class='form-control font-md text-center'><option value=1 "; if(isset($active) && $active==1){echo 'selected';}elseif(!isset($active) && $cur_active==1){echo 'selected';} echo ">Yes</option><option value=0 "; if(isset($active) && $active==0){echo 'selected';}elseif(!isset($active) && $cur_active==0){echo 'selected';}  echo ">No</option></select></td></tr></tbody></table>";
+echo "<tr><td ><input type='text' name='name' placeholder='Full Name' class='form-control font-md text-center' id='name' value='"; if(isset($name)){echo $name;}else{echo $cur_name;} echo "'></td>
+<td><input type='text' name='username' placeholder='Username' disabled class='form-control font-md text-center' value='".$cur_username."'></td>
+<td><input type='password' name='password' placeholder='Leave Blank To Remain' class='form-control font-md text-center'></td>
+<td><select name='admin' class='form-control font-md text-center'><option value=0 "; if(isset($admin) && $admin==0){echo 'selected';}elseif(!isset($admin) && $cur_admin==0){echo 'selected';} echo ">No</option><option value=1 "; if(isset($admin) && $admin==1){echo 'selected';}elseif(!isset($admin) && $cur_admin==1){echo 'selected';}  echo ">Yes</option></select></td>
+<td><input type='number' min=1 name='quota' placeholder='Mailbox Size' class='form-control font-md text-center' value="; if($quota==0){echo $cur_quota;}else{echo $quota;} echo "></td>
+<td>MB</td>
+<td><select name='active' class='form-control font-md text-center'><option value=1 "; if(isset($active) && $active==1){echo 'selected';}elseif(!isset($active) && $cur_active==1){echo 'selected';} echo ">Yes</option><option value=0 "; if(isset($active) && $active==0){echo 'selected';}elseif(!isset($active) && $cur_active==0){echo 'selected';}  echo ">No</option></select></td></tr></tbody></table>";
 echo "<table class='text-center'><tr><td class='col-lg-1'><input type='submit' name='submit' value='UPDATE' class='btn btn-secondary font-md' style='width:12.5%'>&nbsp<input type='submit' name='back' value='BACK' class='btn btn-secondary font-md' style='width:12.5%'></td></tr>";
 echo "</table></form>";
 echo "</div>";
