@@ -2,6 +2,7 @@
 
 <h2>Changelog</h2>
 2025-05-06 3.3 added domain maintenance as of the latest postfix & dovecot update.<br/><br/>
+2025-05-02 3.2 fixed trace log indexing issue.<br/><br/>
 2025-04-18 3.1 optimized some scripts and enhanced security.<br/><br/>
 2025-04-16 3.0 fixed and optimized page length issue.<br/><br/>
 2025-04-16 2.9 trace log changed to descending in ordering.<br/><br/>
