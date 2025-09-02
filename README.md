@@ -34,6 +34,7 @@
 2. Change the info to suit yourself in $\color{red}{config.php}$ and $\color{red}{config.ini}$. the database path should be pointing to the default mailserver location which is $\color{red}{/www/vmail/postfixadmin.db}$, in case your database name or path is different, you may change it.
 
 ![image](https://github.com/user-attachments/assets/7afe3ea4-cba5-40d6-8a5f-f67d3f1c81b6)
+<br/><br/>
 
 3. You need to change the /www/vmail directory permission to allow www to access.<br/>
 $\color{red}{chmod\ 770\ /www/vmail}$<br/>
@@ -48,13 +49,14 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
 
 <img width="1336" height="776" alt="image" src="https://github.com/user-attachments/assets/2ad7d723-40e2-4f22-86ae-ca9482973e2c" />
-
+<br/><br/>
 
 5. You can check for the dependencies to ensure they are enabled or installed for this system to work. Thanks to @advphp for the suggestion.
 
 <img width="1904" height="943" alt="image" src="https://github.com/user-attachments/assets/49fa21dd-aa1e-4532-bee3-c48012e1247c" />
-
+<br/>
 <img width="1905" height="948" alt="image" src="https://github.com/user-attachments/assets/a95e2c01-84f5-4973-88d0-363ee0ec162d" />
+<br/><br/>
 
 6. You will need to install some python dependencies<br/>
 $\color{red}{Ubuntu\ 24.08\ and\ Python3}$<br/>
@@ -71,5 +73,6 @@ $\color{red}{sudo\ systemctl\ restart\ rsyslog}$<br/>
 8. Your very own administration panel is now online.
 
 ![image](https://github.com/user-attachments/assets/d2b8ab27-1aec-419f-8552-45069f6ae2f0)
+<br/><br/>
 
 
