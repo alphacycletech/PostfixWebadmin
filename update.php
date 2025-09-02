@@ -47,7 +47,7 @@ shell_exec('rm -rf temp');
 shell_exec('rm -f update.txt');
 shell_exec('rm -f changelog.txt');
 file_put_contents('version.txt',$latest_version);
-echo "<script>window.location.href='update.php';</script>";
+echo "<script>parent.location.href='index.php';</script>";
 }
 
 /*$content = file_get_contents('changelog.txt');
