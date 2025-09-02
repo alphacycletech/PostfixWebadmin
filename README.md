@@ -42,7 +42,7 @@ $\color{red}{chmod\ 660\ /www/vmail/postfixadmin.db}$<br/>
 $\color{red}{chown\ vmail:www\ /www/vmail/postfixadmin.db}$<br/>
 
 
-4. Go to terminal, enter sudo visudo
+4. Go to terminal, enter $\color{red}{sudo visudo}$<br/>
 add this line to last row of the User privilege specification,<br/>
 $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 (this step might be risky for some people, as it might expose your security to public. if you have concern regarding the security, please skip this step. this step will show you the usage by each account, if you skip this step, each account will return 0 in the usage.)
