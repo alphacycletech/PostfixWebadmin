@@ -50,8 +50,9 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 ![image](https://github.com/user-attachments/assets/ee0bccd6-b410-4ca1-8b3c-2abcd1397ca1)
 
 5. You can check for the dependencies to ensure they are enabled or installed for this system to work.
+<img width="1904" height="943" alt="image" src="https://github.com/user-attachments/assets/49fa21dd-aa1e-4532-bee3-c48012e1247c" />
+<img width="1905" height="948" alt="image" src="https://github.com/user-attachments/assets/a95e2c01-84f5-4973-88d0-363ee0ec162d" />
 
-   
 6. You will need to install some python dependencies<br/>
 $\color{red}{Ubuntu\ 24.08\ and\ Python3}$<br/>
 $\color{red}{sudo\ apt\ install\ python3-pandas}$<br/>
