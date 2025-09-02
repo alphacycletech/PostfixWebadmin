@@ -51,7 +51,7 @@ $\color{red}{www\ ALL=NOPASSWD:\ ALL}$<br/>
 <img width="1336" height="776" alt="image" src="https://github.com/user-attachments/assets/2ad7d723-40e2-4f22-86ae-ca9482973e2c" />
 <br/><br/>
 
-5. You can check for the dependencies to ensure they are enabled or installed for this system to work. Thanks to @advphp for the suggestion.
+5. You can check for the dependencies to ensure they are enabled or installed for this system to work. Thanks to [@advphp](https://github.com/advphp) for the suggestion.
 
 <img width="1904" height="943" alt="image" src="https://github.com/user-attachments/assets/49fa21dd-aa1e-4532-bee3-c48012e1247c" />
 <br/>
