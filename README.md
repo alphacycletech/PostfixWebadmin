@@ -1,6 +1,7 @@
 <h1>This is the web based administration panel for postfix email service, but it's only tested and working in ubuntu 20.04 and later.</h1>
 
 <h2>Changelog</h2>
+2025-09-02 3.5 added required python libraries checking.<br/><br/>
 2025-09-02 3.4 added "check dependencies" button at landing page bottom right, it will validate each required function to ensure installed or enabled.<br/><br/>
 2025-05-06 3.3 added domain maintenance as of the latest postfix & dovecot update.<br/><br/>
 2025-05-02 3.2 fixed trace log indexing issue.<br/><br/>
