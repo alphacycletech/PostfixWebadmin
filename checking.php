@@ -48,6 +48,34 @@ if (!empty($python3_path)) {
 echo "</td>";
 echo "</tr>";
 echo "<tr>";
+echo "<td>Python 3 Pandas</td>";
+echo "<td>";
+
+$pandas_path = shell_exec('pip show pandas');
+
+if (!empty($pandas_path)) {
+    echo $valid;
+} else {
+    echo $invalid;
+}
+
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<td>Python 3 Numpy</td>";
+echo "<td>";
+
+$numpy_path = shell_exec('pip show numpy');
+
+if (!empty($numpy_path)) {
+    echo $valid;
+} else {
+    echo $invalid;
+}
+
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
 echo "<td>Config.ini</td>";
 echo "<td>";
 
@@ -105,8 +133,8 @@ echo "&nbsp<a href='index.php' class='btn btn-secondary font-md' style='width:49
 echo "</tr>";
 
 echo "</tbody>";
-
 echo "</table>";
+echo shell_exec("pip show pandass");
 echo "<style>.font-md {font-size:12px} .font-lg {font-size:30px}</style>";
 echo "<style>.footer {  position: fixed;right: 0;bottom: -3%;left: 0;padding: 1rem; style='background:rgba(0,0,0,0)';text-align: center;}</style>";
 echo "</body></table>";
