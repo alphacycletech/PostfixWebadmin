@@ -4,12 +4,16 @@ import glob
 
 conn = sqlite3.connect('maillog.db')
 
-conn.execute("DROP TABLE log")
+try:
+    conn.execute("DROP TABLE log")
+except sqlite3.OperationalError:
+    pass
+
 conn.execute("CREATE TABLE log (Date VARCHAR(50),Server VARCHAR(100),QueueId VARCHAR(100),EmailId VARCHAR(100),FromUser VARCHAR(100),ToUser VARCHAR(100),Status VARCHAR(50))")
 
 for file in glob.glob('/var/log/mail.log*'):
     if('gz' not in file):
-        df = pd.read_csv(file, sep='delimiter', header=None, engine='python')
+        df = pd.read_csv(file, sep='delimiter', header=None,index_col = False,engine='python')
         log_array=df.values.tolist()
         log_array2=[str(item).replace("'", "") for item in log_array]
 
